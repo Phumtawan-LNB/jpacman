@@ -7,6 +7,7 @@ import java.util.Map;
 import nl.tudelft.jpacman.PacmanConfigurationException;
 import nl.tudelft.jpacman.board.Direction;
 import nl.tudelft.jpacman.npc.ghost.GhostColor;
+import nl.tudelft.jpacman.ui.ThemeConfig;
 
 /**
  * Sprite Store containing the classic Pac-Man sprites.
@@ -54,6 +55,7 @@ public class PacManSprites extends SpriteStore {
     /**
      * @return A map of animated Pac-Man sprites for all directions.
      */
+
     public Map<Direction, Sprite> getPacmanSprites() {
         return directionSprite("/sprite/pacman.png", PACMAN_ANIMATION_FRAMES);
     }
@@ -116,7 +118,14 @@ public class PacManSprites extends SpriteStore {
      * @return The sprite for the wall.
      */
     public Sprite getWallSprite() {
-        return loadSprite("/sprite/wall.png");
+        ThemeConfig config = new ThemeConfig();
+        if (config.getConfig()==0){
+            return loadSprite("/sprite/wall_olympic.png");
+        } else if (config.getConfig()==1){
+            return loadSprite("/sprite/wall_olympic.png");
+        }else {
+            return loadSprite("/sprite/wall.png");
+        }
     }
 
     /**

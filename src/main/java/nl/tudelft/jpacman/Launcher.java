@@ -13,6 +13,8 @@ import nl.tudelft.jpacman.level.LevelFactory;
 import nl.tudelft.jpacman.level.MapParser;
 import nl.tudelft.jpacman.level.Player;
 import nl.tudelft.jpacman.level.PlayerFactory;
+import nl.tudelft.jpacman.main.ui.Menu;
+import nl.tudelft.jpacman.main.ui.mainMenu;
 import nl.tudelft.jpacman.npc.ghost.GhostFactory;
 import nl.tudelft.jpacman.points.PointCalculator;
 import nl.tudelft.jpacman.points.PointCalculatorLoader;
@@ -20,6 +22,7 @@ import nl.tudelft.jpacman.sprite.PacManSprites;
 import nl.tudelft.jpacman.ui.Action;
 import nl.tudelft.jpacman.ui.PacManUI;
 import nl.tudelft.jpacman.ui.PacManUiBuilder;
+
 
 /**
  * Creates and launches the JPacMan UI.
@@ -36,6 +39,8 @@ public class Launcher {
 
     private PacManUI pacManUI;
     private Game game;
+
+    //private MainMenu menu;
 
     /**
      * @return The game object this launcher will start when {@link #launch()}
@@ -207,7 +212,13 @@ public class Launcher {
      * @throws IOException
      *             When a resource could not be read.
      */
+
+    public void MakeMainMenu(){
+
+    }
     public static void main(String[] args) throws IOException {
-        new Launcher().launch();
+        //Menu.main();
+        mainMenu.main();
+        //new MainMenu().main();
     }
 }
