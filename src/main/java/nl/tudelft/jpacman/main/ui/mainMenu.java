@@ -1,7 +1,6 @@
 package nl.tudelft.jpacman.main.ui;
 
 import nl.tudelft.jpacman.Launcher;
-import nl.tudelft.jpacman.ui.ThemeConfig;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,70 +8,98 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class mainMenu extends JFrame {
+    private static final int MENU_WIDTH = 800;
+    private static final int MENU_HEIGHT = 600;
+    private static final Color BACKGROUND_COLOR = new Color(0, 0, 0);
+    private static final Font TITLE_FONT = new Font(Font.SANS_SERIF, Font.BOLD, 50);
+    private static final Font BUTTON_FONT = new Font(Font.SANS_SERIF, Font.BOLD, 30);
+
     public mainMenu() {
-        // set the title and size of the frame
-        setTitle("Main Menu");
-        setSize(800, 600);
+        // Set the title and size of the frame
+        setTitle("Pacman Game Menu");
+        setSize(MENU_WIDTH, MENU_HEIGHT);
+        setResizable(false);
 
-        // create an ImageIcon and a JLabel to display it
-        ImageIcon icon = new ImageIcon("src/main/resources/repacmanMenu.png");
-        JLabel label = new JLabel(icon);
+        // Set the background color
+        getContentPane().setBackground(BACKGROUND_COLOR);
 
-        // create a panel to hold the buttons
-        JPanel buttonPanel = new JPanel(new GridLayout(1, 3, 10, 10));
-        buttonPanel.setOpaque(false);
-        buttonPanel.setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50));
-        buttonPanel.add(new JButton("Easy"));
-        buttonPanel.add(new JButton("Normal"));
-        buttonPanel.add(new JButton("Hard"));
+        // Add Pacman title label
+        JLabel pacmanLabel = new JLabel("PACMAN");
+        pacmanLabel.setFont(TITLE_FONT);
+        pacmanLabel.setForeground(Color.YELLOW);
+        pacmanLabel.setHorizontalAlignment(JLabel.CENTER);
+        getContentPane().add(pacmanLabel, BorderLayout.NORTH);
 
-        // create a panel to hold the text input field
-        JPanel textFieldPanel = new JPanel(new BorderLayout());
-        textFieldPanel.setOpaque(false);
-        textFieldPanel.setBorder(BorderFactory.createEmptyBorder(50, 50, 0, 50));
-        textFieldPanel.add(new JLabel("Enter your name:"), BorderLayout.NORTH);
-        textFieldPanel.add(new JTextField(), BorderLayout.CENTER);
+        // Add Pacman image
+        ImageIcon pacmanIcon = new ImageIcon("src/main/resources/sprite/pacmanwalk.gif");
+        JLabel pacmanImage = new JLabel(pacmanIcon);
+        pacmanImage.setHorizontalAlignment(JLabel.CENTER);
+        getContentPane().add(pacmanImage, BorderLayout.CENTER);
 
-        // add the label, text input field panel, and button panel to the content pane of the frame
-        getContentPane().add(label, BorderLayout.CENTER);
-        getContentPane().add(textFieldPanel, BorderLayout.NORTH);
-        getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+        // Add buttons panel
+        JPanel buttonsPanel = new JPanel(new GridLayout(3, 1, 0, 30));
+        buttonsPanel.setOpaque(false);
+        getContentPane().add(buttonsPanel, BorderLayout.SOUTH);
 
-        // add ActionListener to the buttons
-        JButton newGameButton = (JButton) buttonPanel.getComponent(0);
+        // Add "New Game" button
+        JButton newGameButton = new JButton("New Game");
+        newGameButton.setFont(BUTTON_FONT);
         newGameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // code for new game button
+                // Code for new game button
                 ThemeConfig config = new ThemeConfig();
                 config.setConfig(1);
                 new Launcher().launch();
+                dispose();
             }
         });
+        buttonsPanel.add(newGameButton);
 
-        JButton optionsButton = (JButton) buttonPanel.getComponent(1);
+        // Add "Options" button
+        JButton optionsButton = new JButton("Options");
+        optionsButton.setFont(BUTTON_FONT);
         optionsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // code for options button
+                // Code for options button
             }
         });
+        buttonsPanel.add(optionsButton);
 
-        JButton exitButton = (JButton) buttonPanel.getComponent(2);
+        // Add "Exit" button
+        JButton exitButton = new JButton("Exit");
+        exitButton.setFont(BUTTON_FONT);
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // code for exit button
+                // Code for exit button
                 System.exit(0);
             }
         });
+        buttonsPanel.add(exitButton);
 
-        // make the frame visible
+        // Center the frame on the screen
+        setLocationRelativeTo(null);
+
+        // Make the frame visible
         setVisible(true);
     }
 
     public static void main() {
-        // create a new instance of mainMenu
+        // Create a new instance of GameMenu
         new mainMenu();
+    }
+
+    public static class ThemeConfig {
+        private int config = 0;
+
+        public void setConfig(int config) {
+            this.config = config;
+        }
+
+        public int getConfig() {
+            return config;
+        }
     }
 }
