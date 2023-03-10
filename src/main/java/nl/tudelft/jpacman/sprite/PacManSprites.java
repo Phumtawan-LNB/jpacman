@@ -57,7 +57,13 @@ public class PacManSprites extends SpriteStore {
      */
 
     public Map<Direction, Sprite> getPacmanSprites() {
-        return directionSprite("/sprite/pacman.png", PACMAN_ANIMATION_FRAMES);
+        if (config.getConfig()=="0"){
+            return directionSprite("/sprite/pacman_olympic.png", PACMAN_ANIMATION_FRAMES);
+        }else if (config.getConfig()=="1"){
+            return directionSprite("/sprite/pacman_halloween.png", PACMAN_ANIMATION_FRAMES);
+        }else{
+            return directionSprite("/sprite/pacman_crismas.png", PACMAN_ANIMATION_FRAMES);
+        }
     }
 
     /**
@@ -117,14 +123,14 @@ public class PacManSprites extends SpriteStore {
     /**
      * @return The sprite for the wall.
      */
+    ThemeConfig config = new ThemeConfig();
     public Sprite getWallSprite() {
-        ThemeConfig config = new ThemeConfig();
-        if (config.getConfig()==0){
-            return loadSprite("/sprite/wall_olympic.png");
-        } else if (config.getConfig()==1){
-            return loadSprite("/sprite/wall_olympic.png");
-        }else {
+        if (config.getConfig()=="0"){
             return loadSprite("/sprite/wall.png");
+        } else if (config.getConfig()=="1"){
+            return loadSprite("/sprite/wall_halloween.png");
+        }else {
+            return loadSprite("/sprite/wall_christmas.png");
         }
     }
 
@@ -132,14 +138,26 @@ public class PacManSprites extends SpriteStore {
      * @return The sprite for the ground.
      */
     public Sprite getGroundSprite() {
-        return loadSprite("/sprite/floor.png");
+        if (config.getConfig()=="0"){
+            return loadSprite("/sprite/floor_olympic.png");
+        }else if(config.getConfig()=="1"){
+            return loadSprite("/sprite/floor.png");
+        }else{
+            return loadSprite("/sprite/floor.png");
+        }
     }
 
     /**
      * @return The sprite for the
      */
     public Sprite getPelletSprite() {
-        return loadSprite("/sprite/pellet.png");
+        if (config.getConfig()=="0"){
+            return loadSprite("/sprite/point_olympic.png");
+        }else if (config.getConfig()=="1"){
+            return loadSprite("/sprite/point_halloween.png");
+        }else{
+            return loadSprite("/sprite/point_cristmas.png");
+        }
     }
 
     /**

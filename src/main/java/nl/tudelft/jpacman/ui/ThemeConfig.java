@@ -1,11 +1,12 @@
 package nl.tudelft.jpacman.ui;
 
 public class ThemeConfig {
-    private int config = 0;
-    public void setConfig(int config){
+    private static String config;
+    public void setConfig(String config){
         this.config = config;
+        System.out.println(config);
     }
-    public int getConfig(){
+    public static String getConfig(){
         return config;
     }
 }
