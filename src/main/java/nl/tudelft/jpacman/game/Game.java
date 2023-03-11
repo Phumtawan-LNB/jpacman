@@ -2,10 +2,12 @@ package nl.tudelft.jpacman.game;
 
 import java.util.List;
 
+import nl.tudelft.jpacman.Launcher;
 import nl.tudelft.jpacman.board.Direction;
 import nl.tudelft.jpacman.level.Level;
 import nl.tudelft.jpacman.level.Level.LevelObserver;
 import nl.tudelft.jpacman.level.Player;
+import nl.tudelft.jpacman.main.ui.mainMenu;
 import nl.tudelft.jpacman.points.PointCalculator;
 
 /**
@@ -70,6 +72,16 @@ public abstract class Game implements LevelObserver {
             getLevel().stop();
         }
     }
+    public void restart(){
+        stop();
+        Launcher.pacManUI.dispose();
+        new Launcher().launch();
+    }
+    public void back(){
+        stop();
+        Launcher.pacManUI.dispose();
+        new mainMenu();
+    }
 
     /**
      * @return <code>true</code> iff the game is started and in progress.
@@ -107,6 +119,7 @@ public abstract class Game implements LevelObserver {
     @Override
     public void levelWon() {
         stop();
+
     }
 
     @Override

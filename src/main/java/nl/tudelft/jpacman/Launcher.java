@@ -34,9 +34,10 @@ public class Launcher {
     private static final PacManSprites SPRITE_STORE = new PacManSprites();
 
     public static final String DEFAULT_MAP = "/board.txt";
+    public static PacManUI pacManUI;
     private String levelMap = DEFAULT_MAP;
 
-    private PacManUI pacManUI;
+    //private PacManUI pacManUI;
     private Game game;
 
     //private MainMenu menu;
@@ -192,6 +193,7 @@ public class Launcher {
         pacManUI.start();
     }
 
+
     /**
      * Disposes of the UI. For more information see
      * {@link javax.swing.JFrame#dispose()}.
@@ -212,12 +214,9 @@ public class Launcher {
      *             When a resource could not be read.
      */
 
-    public void MakeMainMenu(){
-
-    }
     public static void main(String[] args) throws IOException {
         //Menu.main();
-        mainMenu.main();
+        new mainMenu();
         //new MainMenu().main();
     }
 }
