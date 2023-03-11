@@ -1,7 +1,6 @@
 package nl.tudelft.jpacman.main.ui;
 
 import nl.tudelft.jpacman.Launcher;
-import nl.tudelft.jpacman.sprite.PacManSprites;
 import nl.tudelft.jpacman.ui.ThemeConfig;
 
 import javax.swing.*;
@@ -9,13 +8,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class mainMenu extends JFrame {
+public class MainMenu extends JFrame {
     private static final int MENU_WIDTH = 700;
     private static final int MENU_HEIGHT = 800;
     private static final Color BACKGROUND_COLOR = new Color(0, 0, 0);
 
 
-    public mainMenu() {
+    public MainMenu() {
         // Disable button mnemonic display
         UIManager.put("Button.showMnemonics", Boolean.FALSE);
 

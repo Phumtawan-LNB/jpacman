@@ -7,7 +7,8 @@ import nl.tudelft.jpacman.board.Direction;
 import nl.tudelft.jpacman.level.Level;
 import nl.tudelft.jpacman.level.Level.LevelObserver;
 import nl.tudelft.jpacman.level.Player;
-import nl.tudelft.jpacman.main.ui.mainMenu;
+import nl.tudelft.jpacman.main.ui.GameVictory;
+import nl.tudelft.jpacman.main.ui.MainMenu;
 import nl.tudelft.jpacman.points.PointCalculator;
 
 /**
@@ -80,7 +81,7 @@ public abstract class Game implements LevelObserver {
     public void back(){
         stop();
         Launcher.pacManUI.dispose();
-        new mainMenu();
+        new MainMenu();
     }
 
     /**
@@ -119,7 +120,8 @@ public abstract class Game implements LevelObserver {
     @Override
     public void levelWon() {
         stop();
-
+        Launcher.pacManUI.dispose();
+        new GameVictory();
     }
 
     @Override
