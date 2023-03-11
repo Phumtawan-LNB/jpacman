@@ -216,7 +216,7 @@ public class Launcher {
      */
 
     public static void main(String[] args) throws IOException {
-        //new MainMenu();
-        new GameVictory();
+        new MainMenu();
+        //new GameVictory();
     }
 }
