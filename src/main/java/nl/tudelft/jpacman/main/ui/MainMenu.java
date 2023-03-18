@@ -9,94 +9,87 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainMenu extends JFrame {
-    private static final int MENU_WIDTH = 700;
-    private static final int MENU_HEIGHT = 800;
-    private static final Color BACKGROUND_COLOR = new Color(0, 0, 0);
+    private JLabel pacLogo, pacWalk;
+    private JButton startButton;
+    private JButton exitButton;
+    private JTextField textField1;
 
 
     public MainMenu() {
-        // Disable button mnemonic display
-        UIManager.put("Button.showMnemonics", Boolean.FALSE);
+        super("Pacman Main Menu");
 
-        // Set the title and size of the frame
-        setTitle("Pacman Game Menu");
-        setSize(MENU_WIDTH, MENU_HEIGHT);
-        setResizable(false);
-        //set theme class
-        ThemeConfig config = new ThemeConfig();
-
-        // Set the background color
-        getContentPane().setBackground(BACKGROUND_COLOR);
-
-        ImageIcon pacmanIcon1 = new ImageIcon("src/main/resources/sprite/logo_pacman.png");
-        JLabel pacmanImage1 = new JLabel(pacmanIcon1);
-        pacmanImage1.setHorizontalAlignment(JLabel.CENTER);
-        getContentPane().add(pacmanImage1, BorderLayout.NORTH);
-
-        ImageIcon pacmanIcon = new ImageIcon("src/main/resources/sprite/pacmanwalk.gif");
-        JLabel pacmanImage = new JLabel(pacmanIcon);
-        pacmanImage.setHorizontalAlignment(JLabel.CENTER);
-        getContentPane().add(pacmanImage, BorderLayout.CENTER);
-
+        // Set the layout manager for the frame
+        setLayout(new BorderLayout());
 
         // Create a panel for the buttons
-        JPanel buttonsPanel = new JPanel(new GridLayout(1, 3, 20, 50));
-        buttonsPanel.setOpaque(false);
-        //pacmanImage.setHorizontalAlignment(JLabel.CENTER);
-        getContentPane().add(buttonsPanel, BorderLayout.SOUTH);
+        JPanel buttonPanel = new JPanel();
+        JPanel imagePanel = new JPanel();
 
-        // Add "New Game" button
-        JButton newGameButton = new JButton(new ImageIcon("src/main/resources/sprite/bte.png"));
-        newGameButton.setBorderPainted(false);
-        newGameButton.setContentAreaFilled(false);
-        newGameButton.addActionListener(new ActionListener() {
-            @Override
+        //set the theme class
+        ThemeConfig config = new ThemeConfig();
+
+        //Image Bg
+        ImageIcon classicIcon = new ImageIcon(getClass().getResource("/sprite/logo_pacman.png"));
+        pacLogo = new JLabel(classicIcon);
+        buttonPanel.add(pacLogo);
+        pacLogo.setBounds(0, 0, 10, 10);
+
+        //Image Bg
+        ImageIcon pacmanwalkIcon = new ImageIcon(getClass().getResource("/sprite/pacmanwalk.gif"));
+        pacWalk = new JLabel(pacmanwalkIcon);
+        buttonPanel.add(pacWalk);
+        pacWalk.setBounds(0, 0, 10, 10);
+
+        //Start Button
+        ImageIcon startbBtn = new ImageIcon(getClass().getResource("/sprite/start.png"));
+        startButton = new JButton(startbBtn);
+        startButton.setBorderPainted(false);
+        startButton.setContentAreaFilled(false);
+        startButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 config.setConfig("0");
                 new Launcher().launch();
-                dispose();
             }
         });
-        buttonsPanel.add(newGameButton);
+        add(startButton);
+        startButton.setBounds(250, 580, 200, 100);
 
-        // Add "Options" button
-        JButton optionsButton = new JButton(new ImageIcon("src/main/resources/sprite/nm.png"));
-        optionsButton.setBorderPainted(false);
-        optionsButton.setContentAreaFilled(false);
-        optionsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Code for options button
-                config.setConfig("1");
-                new Launcher().launch();
-                dispose();
-            }
-        });
-        buttonsPanel.add(optionsButton);
-
-        // Add "Exit" button
-        JButton  exitButton = new JButton(new ImageIcon("src/main/resources/sprite/H.png"));
+        // Create the Exit button
+        ImageIcon exitBtn = new ImageIcon(getClass().getResource("/sprite/exit.png"));
+        exitButton = new JButton(exitBtn);
         exitButton.setBorderPainted(false);
         exitButton.setContentAreaFilled(false);
         exitButton.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
-                // Code for exit button
-                config.setConfig("2");
-                new Launcher().launch();
-                dispose();
+                System.exit(0);
             }
         });
-        buttonsPanel.add(exitButton);
+        add(exitButton);
+        exitButton.setBounds(250, 650, 200, 100);
 
+        buttonPanel.setBackground(Color.BLACK);
 
-        // Set the preferred size of the buttons panel
-        buttonsPanel.setPreferredSize(new Dimension(600, 100));
+        // Add the button panel to the center of the frame
+        add(buttonPanel, BorderLayout.CENTER);
 
-        // Center the frame on the screen
+        // Set the size and center the frame on the screen
+        setSize(700, 800);
+
+        // set the frame
         setLocationRelativeTo(null);
+        setResizable(false);
 
-        // Make the frame visible
+
+        // Set the close operation and make the frame visible
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
+
+//        setLayout(new FlowLayout(FlowLayout.CENTER,100,10));
+//        buttonPanel.setPreferredSize(new Dimension(100,300));
+//        buttonPanel.setBackground(Color.GRAY);
+        buttonPanel.setLayout(new FlowLayout());
+
     }
+
 }

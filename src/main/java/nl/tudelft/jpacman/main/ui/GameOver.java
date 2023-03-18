@@ -59,7 +59,7 @@ public class GameOver extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Code for exit button
                 dispose();
-                new MainMenu();
+                System.exit(0);
 
             }
         });
