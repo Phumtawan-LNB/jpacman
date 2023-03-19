@@ -48,8 +48,7 @@ public class MainMenu extends JFrame {
         startButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                config.setConfig("0");
-                new Launcher().launch();
+                new ThemeUI();
             }
         });
         add(startButton);
@@ -66,7 +65,7 @@ public class MainMenu extends JFrame {
             }
         });
         add(exitButton);
-        exitButton.setBounds(250, 650, 200, 100);
+        exitButton.setBounds(250, 655, 200, 100);
 
         buttonPanel.setBackground(Color.BLACK);
 
@@ -79,6 +78,7 @@ public class MainMenu extends JFrame {
         // set the frame
         setLocationRelativeTo(null);
         setResizable(false);
+        setUndecorated(false);
 
 
         // Set the close operation and make the frame visible
@@ -88,6 +88,7 @@ public class MainMenu extends JFrame {
 //        setLayout(new FlowLayout(FlowLayout.CENTER,100,10));
 //        buttonPanel.setPreferredSize(new Dimension(100,300));
 //        buttonPanel.setBackground(Color.GRAY);
+
         buttonPanel.setLayout(new FlowLayout());
 
     }
