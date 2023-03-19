@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 public class ThemeUI extends JFrame {
     private JLabel pacLogo, pacWalk;
     private JButton exitButton, christmasButton, olympicButton, halloweenButton, candyButton, spaceButton;
+    private JButton nameIconbutton,nameIconbutton2,nameIconbutton3,nameIconbutton4,nameIconbutton5;
     private JTextField textField1;
     private JButton startButton;
 
@@ -31,6 +32,44 @@ public class ThemeUI extends JFrame {
         pacLogo = new JLabel(classicIcon);
         buttonPanel.add(pacLogo);
         pacLogo.setBounds(0, 0, 10, 10);
+
+        //Create the Halloween button
+        ImageIcon nameIcon = new ImageIcon(getClass().getResource("/sprite/dead.png"));
+        nameIconbutton = new JButton(nameIcon);
+        nameIconbutton.setBorderPainted(false);
+        nameIconbutton.setContentAreaFilled(false);
+        add(nameIconbutton);
+        nameIconbutton.setBounds(80, 210, 176, 16);
+
+        //Create the Halloween button
+        ImageIcon nameIcon2 = new ImageIcon(getClass().getResource("/sprite/dead.png"));
+        nameIconbutton2 = new JButton(nameIcon);
+        nameIconbutton2.setBorderPainted(false);
+        nameIconbutton2.setContentAreaFilled(false);
+        add(nameIconbutton2);
+        nameIconbutton2.setBounds(260, 210, 176, 16);
+
+        ImageIcon nameIcon3 = new ImageIcon(getClass().getResource("/sprite/dead.png"));
+        nameIconbutton3 = new JButton(nameIcon);
+        nameIconbutton3.setBorderPainted(false);
+        nameIconbutton3.setContentAreaFilled(false);
+        add(nameIconbutton3);
+        nameIconbutton3.setBounds(445, 210, 176, 16);
+
+        ImageIcon nameIcon4 = new ImageIcon(getClass().getResource("/sprite/dead.png"));
+        nameIconbutton4 = new JButton(nameIcon);
+        nameIconbutton4.setBorderPainted(false);
+        nameIconbutton4.setContentAreaFilled(false);
+        add(nameIconbutton4);
+        nameIconbutton4.setBounds(80, 420, 176, 16);
+
+        ImageIcon nameIcon5 = new ImageIcon(getClass().getResource("/sprite/dead.png"));
+        nameIconbutton5 = new JButton(nameIcon);
+        nameIconbutton5.setBorderPainted(false);
+        nameIconbutton5.setContentAreaFilled(false);
+        add(nameIconbutton5);
+        nameIconbutton5.setBounds(260, 420, 176, 16);
+
 
         //Create the Halloween button
         ImageIcon olympicIcon = new ImageIcon(getClass().getResource("/sprite/olympic.png"));

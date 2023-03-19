@@ -10,6 +10,7 @@ import nl.tudelft.jpacman.level.Player;
 import nl.tudelft.jpacman.main.ui.GameOver;
 import nl.tudelft.jpacman.main.ui.GameVictory;
 import nl.tudelft.jpacman.main.ui.MainMenu;
+import nl.tudelft.jpacman.main.ui.ThemeUI;
 import nl.tudelft.jpacman.points.PointCalculator;
 
 /**
@@ -83,6 +84,11 @@ public abstract class Game implements LevelObserver {
         stop();
         Launcher.pacManUI.dispose();
         new MainMenu();
+    }
+    public void theme(){
+        stop();
+        Launcher.pacManUI.dispose();
+        new ThemeUI();
     }
 
     /**

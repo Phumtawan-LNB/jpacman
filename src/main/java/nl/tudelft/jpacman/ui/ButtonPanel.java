@@ -38,7 +38,6 @@ class ButtonPanel extends JPanel {
         }
 
         for (final String caption : buttons.keySet()) {
-            System.out.println(caption.toLowerCase());
             ImageIcon icon = new ImageIcon(getClass().getResource("/sprite/" + caption.toLowerCase() + "_ingame.png"));
             JButton button = new JButton(icon);
             button.addActionListener(e -> {

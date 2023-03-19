@@ -28,7 +28,9 @@ public class PacManUiBuilder {
     private static final String START_CAPTION = "Start";
 
     private static final String RESTART_CAPTION = "Restart";
+    private static final String THEME_CAPTION = "Theme";
     private static final String BACK_CAPTION = "Back";
+
     /**
      * Map of buttons and their actions.
      */
@@ -72,6 +74,7 @@ public class PacManUiBuilder {
             addStartButton(game);
             addStopButton(game);
             addRestartButton(game);
+            addThemeButton(game);
             addBackButton(game);
         }
         return new PacManUI(game, buttons, keyMappings, scoreFormatter);
@@ -88,6 +91,12 @@ public class PacManUiBuilder {
         assert game != null;
 
         buttons.put(STOP_CAPTION, game::stop);
+    }
+
+    private void addThemeButton(final Game game) {
+        assert game != null;
+
+        buttons.put(THEME_CAPTION, game::theme);
     }
 
     /**
@@ -161,6 +170,7 @@ public class PacManUiBuilder {
         buttons.put(START_CAPTION, null);
         buttons.put(STOP_CAPTION, null);
         buttons.put(RESTART_CAPTION,null);
+        buttons.put(THEME_CAPTION,null);
         buttons.put(BACK_CAPTION, null);
         return this;
     }
