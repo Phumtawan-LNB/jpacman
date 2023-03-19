@@ -1,5 +1,7 @@
 package nl.tudelft.jpacman.ui;
 
+import java.awt.*;
+
 /**
  * An action that can be executed.
  *

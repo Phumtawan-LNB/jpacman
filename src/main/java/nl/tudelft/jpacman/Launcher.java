@@ -15,6 +15,7 @@ import nl.tudelft.jpacman.level.Player;
 import nl.tudelft.jpacman.level.PlayerFactory;
 import nl.tudelft.jpacman.main.ui.GameVictory;
 import nl.tudelft.jpacman.main.ui.MainMenu;
+import nl.tudelft.jpacman.main.ui.ThemeUI;
 import nl.tudelft.jpacman.npc.ghost.GhostFactory;
 import nl.tudelft.jpacman.points.PointCalculator;
 import nl.tudelft.jpacman.points.PointCalculatorLoader;
@@ -216,6 +217,7 @@ public class Launcher {
      */
 
     public static void main(String[] args) throws IOException {
+        //new ThemeUI();
         new MainMenu();
         //new GameVictory();
     }

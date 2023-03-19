@@ -43,9 +43,14 @@ public class GameOver extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Code for restart button
+<<<<<<< HEAD
 
                 new Launcher().launch();
+=======
+>>>>>>> 0c7108446095b3bc6f6392c9b64340051b6bc020
                 dispose();
+                new Launcher().launch();
+
             }
         });
         buttonsPanel.add(restartButton);
@@ -60,6 +65,10 @@ public class GameOver extends JFrame {
                 // Code for exit button
                 dispose();
                 System.exit(0);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0c7108446095b3bc6f6392c9b64340051b6bc020
             }
         });
         buttonsPanel.add(exitButton);
