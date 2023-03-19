@@ -12,8 +12,7 @@ public class MainMenu extends JFrame {
     private JLabel pacLogo, pacWalk;
     private JButton startButton;
     private JButton exitButton;
-    private JTextField textField1;
-
+    private JButton imageButton;
 
     public MainMenu() {
         super("Pacman Main Menu");
@@ -27,18 +26,31 @@ public class MainMenu extends JFrame {
 
         //set the theme class
         ThemeConfig config = new ThemeConfig();
+        ImageIcon imgBtn = new ImageIcon(getClass().getResource("/sprite/logo_pacman3.png"));
+        imageButton = new JButton(imgBtn);
+        imageButton.setBorderPainted(false);
+        imageButton.setContentAreaFilled(false);
+        add(imageButton);
+        imageButton.setBounds(50, 50, 600, 229);
 
         //Image Bg
-        ImageIcon classicIcon = new ImageIcon(getClass().getResource("/sprite/logo_pacman.png"));
+        /*ImageIcon classicIcon = new ImageIcon(getClass().getResource("/sprite/logo_pacman3.png"));
         pacLogo = new JLabel(classicIcon);
         buttonPanel.add(pacLogo);
-        pacLogo.setBounds(0, 0, 10, 10);
+        pacLogo.setBounds(0, 0, 10, 10);*/
+
+        ImageIcon imgBtn2 = new ImageIcon(getClass().getResource("/sprite/pacmanwalk.gif"));
+        imageButton = new JButton(imgBtn2);
+        imageButton.setBorderPainted(false);
+        imageButton.setContentAreaFilled(false);
+        add(imageButton);
+        imageButton.setBounds(100, 250, 492, 280);
 
         //Image Bg
-        ImageIcon pacmanwalkIcon = new ImageIcon(getClass().getResource("/sprite/pacmanwalk.gif"));
+        /*ImageIcon pacmanwalkIcon = new ImageIcon(getClass().getResource("/sprite/pacmanwalk.gif"));
         pacWalk = new JLabel(pacmanwalkIcon);
         buttonPanel.add(pacWalk);
-        pacWalk.setBounds(0, 0, 10, 10);
+        pacWalk.setBounds(0, 0, 10, 10);*/
 
         //Start Button
         ImageIcon startbBtn = new ImageIcon(getClass().getResource("/sprite/start_new.png"));
@@ -52,7 +64,7 @@ public class MainMenu extends JFrame {
             }
         });
         add(startButton);
-        startButton.setBounds(250, 510, 200, 100);
+        startButton.setBounds(250, 525, 200, 100);
 
         // Create the Exit button
         ImageIcon exitBtn = new ImageIcon(getClass().getResource("/sprite/exit_new.png"));

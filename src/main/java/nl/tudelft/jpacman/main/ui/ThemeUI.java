@@ -15,8 +15,12 @@ public class ThemeUI extends JFrame {
     private JTextField textField1;
     private JButton startButton;
 
+    private JButton imageButton;
+
     public ThemeUI() {
         super("Pacman Theme Menu");
+
+
 
         // Set the layout manager for the frame
         setLayout(new BorderLayout());
@@ -28,43 +32,51 @@ public class ThemeUI extends JFrame {
         ThemeConfig config = new ThemeConfig();
 
         //Image Bg
-        ImageIcon classicIcon = new ImageIcon(getClass().getResource("/sprite/select_them.png"));
+        /*ImageIcon classicIcon = new ImageIcon(getClass().getResource("/sprite/select_them.png"));
         pacLogo = new JLabel(classicIcon);
         buttonPanel.add(pacLogo);
-        pacLogo.setBounds(0, 0, 10, 10);
+        pacLogo.setBounds(0, 0, 10, 10);*/
+
+        ImageIcon imgBtn = new ImageIcon(getClass().getResource("/sprite/select_them.png"));
+        imageButton = new JButton(imgBtn);
+        imageButton.setBorderPainted(false);
+        imageButton.setContentAreaFilled(false);
+        add(imageButton);
+        imageButton.setBounds(160, 60, 356, 82);
+
 
         //Create the Halloween button
-        ImageIcon nameIcon = new ImageIcon(getClass().getResource("/sprite/dead.png"));
+        ImageIcon nameIcon = new ImageIcon(getClass().getResource("/sprite/olympic_name.png"));
         nameIconbutton = new JButton(nameIcon);
         nameIconbutton.setBorderPainted(false);
         nameIconbutton.setContentAreaFilled(false);
         add(nameIconbutton);
-        nameIconbutton.setBounds(80, 210, 176, 16);
+        nameIconbutton.setBounds(105, 210, 117, 47);
 
         //Create the Halloween button
-        ImageIcon nameIcon2 = new ImageIcon(getClass().getResource("/sprite/dead.png"));
-        nameIconbutton2 = new JButton(nameIcon);
+        ImageIcon nameIcon2 = new ImageIcon(getClass().getResource("/sprite/hlw_name.png"));
+        nameIconbutton2 = new JButton(nameIcon2);
         nameIconbutton2.setBorderPainted(false);
         nameIconbutton2.setContentAreaFilled(false);
         add(nameIconbutton2);
-        nameIconbutton2.setBounds(260, 210, 176, 16);
+        nameIconbutton2.setBounds(265, 210, 155, 47);
 
-        ImageIcon nameIcon3 = new ImageIcon(getClass().getResource("/sprite/dead.png"));
-        nameIconbutton3 = new JButton(nameIcon);
+        ImageIcon nameIcon3 = new ImageIcon(getClass().getResource("/sprite/crs_name.png"));
+        nameIconbutton3 = new JButton(nameIcon3);
         nameIconbutton3.setBorderPainted(false);
         nameIconbutton3.setContentAreaFilled(false);
         add(nameIconbutton3);
-        nameIconbutton3.setBounds(445, 210, 176, 16);
+        nameIconbutton3.setBounds(455, 210, 146, 47);
 
         ImageIcon nameIcon4 = new ImageIcon(getClass().getResource("/sprite/dead.png"));
-        nameIconbutton4 = new JButton(nameIcon);
+        nameIconbutton4 = new JButton(nameIcon4);
         nameIconbutton4.setBorderPainted(false);
         nameIconbutton4.setContentAreaFilled(false);
         add(nameIconbutton4);
         nameIconbutton4.setBounds(80, 420, 176, 16);
 
         ImageIcon nameIcon5 = new ImageIcon(getClass().getResource("/sprite/dead.png"));
-        nameIconbutton5 = new JButton(nameIcon);
+        nameIconbutton5 = new JButton(nameIcon5);
         nameIconbutton5.setBorderPainted(false);
         nameIconbutton5.setContentAreaFilled(false);
         add(nameIconbutton5);
@@ -160,6 +172,7 @@ public class ThemeUI extends JFrame {
         startButton.setBounds(250, 650, 200, 100);
         // Set the panel background to black
         buttonPanel.setBackground(Color.BLACK);
+
 
         // Add the button panel to the center of the frame
         add(buttonPanel, BorderLayout.CENTER);

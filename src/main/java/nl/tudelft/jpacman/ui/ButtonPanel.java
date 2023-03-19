@@ -45,8 +45,6 @@ class ButtonPanel extends JPanel {
                 parent.requestFocusInWindow();
             });
 
-
-
             button.setBorderPainted(false);
             button.setContentAreaFilled(false);
             //button.setBackground(Color.YELLOW);
