@@ -27,10 +27,19 @@ class ButtonPanel extends JPanel {
         assert buttons != null;
         assert parent != null;
 
-        setBackground(Color.BLACK);
+
+
+        ThemeConfig config = new ThemeConfig();
+        if (config.getConfig()=="0"){
+            setBackground(Color.WHITE);
+        }
+        else {
+            setBackground(Color.BLACK);
+        }
 
         for (final String caption : buttons.keySet()) {
-            ImageIcon icon = new ImageIcon(getClass().getResource("/sprite/start_ingame.png"));
+            System.out.println(caption.toLowerCase());
+            ImageIcon icon = new ImageIcon(getClass().getResource("/sprite/" + caption.toLowerCase() + "_ingame.png"));
             JButton button = new JButton(icon);
             button.addActionListener(e -> {
                 buttons.get(caption).doAction();

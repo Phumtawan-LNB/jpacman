@@ -51,8 +51,15 @@ public class ScorePanel extends JPanel {
         assert players != null;
 
         setLayout(new GridLayout(2, players.size()));
-        setBackground(Color.BLACK);
 
+
+        ThemeConfig config = new ThemeConfig();
+        if (config.getConfig()=="0"){
+            setBackground(Color.WHITE);
+        }
+        else {
+            setBackground(Color.BLACK);
+        }
         /*for (int i = 1; i <= players.size(); i++) {
             add(new JLabel("Player " + i, JLabel.CENTER));
         }*/

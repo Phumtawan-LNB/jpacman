@@ -41,7 +41,7 @@ public class MainMenu extends JFrame {
         pacWalk.setBounds(0, 0, 10, 10);
 
         //Start Button
-        ImageIcon startbBtn = new ImageIcon(getClass().getResource("/sprite/start.png"));
+        ImageIcon startbBtn = new ImageIcon(getClass().getResource("/sprite/start_new.png"));
         startButton = new JButton(startbBtn);
         startButton.setBorderPainted(false);
         startButton.setContentAreaFilled(false);
@@ -52,10 +52,10 @@ public class MainMenu extends JFrame {
             }
         });
         add(startButton);
-        startButton.setBounds(250, 580, 200, 100);
+        startButton.setBounds(250, 510, 200, 100);
 
         // Create the Exit button
-        ImageIcon exitBtn = new ImageIcon(getClass().getResource("/sprite/exit.png"));
+        ImageIcon exitBtn = new ImageIcon(getClass().getResource("/sprite/exit_new.png"));
         exitButton = new JButton(exitBtn);
         exitButton.setBorderPainted(false);
         exitButton.setContentAreaFilled(false);
@@ -65,7 +65,7 @@ public class MainMenu extends JFrame {
             }
         });
         add(exitButton);
-        exitButton.setBounds(250, 655, 200, 100);
+        exitButton.setBounds(250, 600, 200, 100);
 
         buttonPanel.setBackground(Color.BLACK);
 

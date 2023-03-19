@@ -12,7 +12,7 @@ public class ThemeUI extends JFrame {
     private JLabel pacLogo, pacWalk;
     private JButton exitButton, christmasButton, olympicButton, halloweenButton, candyButton, spaceButton;
     private JTextField textField1;
-
+    private JButton startButton;
 
     public ThemeUI() {
         super("Pacman Theme Menu");
@@ -27,7 +27,7 @@ public class ThemeUI extends JFrame {
         ThemeConfig config = new ThemeConfig();
 
         //Image Bg
-        ImageIcon classicIcon = new ImageIcon(getClass().getResource("/sprite/logo_pacman.png"));
+        ImageIcon classicIcon = new ImageIcon(getClass().getResource("/sprite/select_them.png"));
         pacLogo = new JLabel(classicIcon);
         buttonPanel.add(pacLogo);
         pacLogo.setBounds(0, 0, 10, 10);
@@ -107,7 +107,18 @@ public class ThemeUI extends JFrame {
         add(spaceButton);
         spaceButton.setBounds(260, 450, 160, 147);
 
-
+        ImageIcon startbBtn = new ImageIcon(getClass().getResource("/sprite/back_new.png"));
+        startButton = new JButton(startbBtn);
+        startButton.setBorderPainted(false);
+        startButton.setContentAreaFilled(false);
+        startButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new MainMenu();
+            }
+        });
+        add(startButton);
+        startButton.setBounds(250, 650, 200, 100);
         // Set the panel background to black
         buttonPanel.setBackground(Color.BLACK);
 

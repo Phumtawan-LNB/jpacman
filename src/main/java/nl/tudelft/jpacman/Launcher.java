@@ -13,6 +13,7 @@ import nl.tudelft.jpacman.level.LevelFactory;
 import nl.tudelft.jpacman.level.MapParser;
 import nl.tudelft.jpacman.level.Player;
 import nl.tudelft.jpacman.level.PlayerFactory;
+import nl.tudelft.jpacman.main.ui.GameOver;
 import nl.tudelft.jpacman.main.ui.GameVictory;
 import nl.tudelft.jpacman.main.ui.MainMenu;
 import nl.tudelft.jpacman.main.ui.ThemeUI;
@@ -218,7 +219,8 @@ public class Launcher {
 
     public static void main(String[] args) throws IOException {
         //new ThemeUI();
-        new MainMenu();
+       new MainMenu();
         //new GameVictory();
+        //new GameOver();
     }
 }

@@ -2,6 +2,7 @@ package nl.tudelft.jpacman.main.ui;
 
 import javax.swing.*;
 import nl.tudelft.jpacman.Launcher;
+import nl.tudelft.jpacman.ui.ThemeConfig;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,87 +10,78 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GameVictory extends JFrame {
-    private static final int MENU_WIDTH = 700;
-    private static final int MENU_HEIGHT = 800;
-    private static final Color BACKGROUND_COLOR = new Color(0, 0, 0);
-    private static final Font TITLE_FONT = new Font("Press Start 2P", Font.BOLD, 30);
-    private static final Font BUTTON_FONT = new Font("Press Start 2P", Font.BOLD, 20);
+    private JLabel pacLogo, pacWalk;
+    private JButton startButton;
+    private JButton exitButton;
+    private JTextField textField1;
 
     public GameVictory() {
-        // Set the title and size of the frame
-        setTitle("Game Victory");
-        setSize(MENU_WIDTH, MENU_HEIGHT);
-        setResizable(false);
+        super("Game victory");
 
-        // Set the bounds of the frame
-        //setBounds(100, 100, MENU_WIDTH, MENU_HEIGHT);
+        // Set the layout manager for the frame
+        setLayout(new BorderLayout());
 
-        // Set the background color
-        getContentPane().setBackground(BACKGROUND_COLOR);
+        // Create a panel for the buttons
+        JPanel buttonPanel = new JPanel();
+        JPanel imagePanel = new JPanel();
 
-        ImageIcon pacmanIcon1 = new ImageIcon("src/main/resources/sprite/victory_pic.png");
-        JLabel pacmanImage1 = new JLabel(pacmanIcon1);
-        pacmanImage1.setHorizontalAlignment(JLabel.CENTER);
-        getContentPane().add(pacmanImage1, BorderLayout.NORTH);
+        //set the theme class
+        ThemeConfig config = new ThemeConfig();
 
-        // Add Pacman Game Over image
-        ImageIcon gameVictoryIcon = new ImageIcon("src/main/resources/sprite/gamevictory.gif");
-        JLabel gameVictoryImage = new JLabel(gameVictoryIcon);
-        gameVictoryImage.setHorizontalAlignment(JLabel.CENTER);
-        getContentPane().add(gameVictoryImage, BorderLayout.CENTER);
 
-        // Add "Restart" and "Exit" buttons panel
-        JPanel buttonsPanel = new JPanel(new GridLayout(1, 2, 30, 0));
-        buttonsPanel.setOpaque(false);
-        getContentPane().add(buttonsPanel, BorderLayout.SOUTH);
+        //Image Bg
+        ImageIcon pacmanwalkIcon = new ImageIcon(getClass().getResource("/sprite/victory.png"));
+        pacWalk = new JLabel(pacmanwalkIcon);
+        buttonPanel.add(pacWalk);
+        pacWalk.setBounds(0, 0, 10, 10);
 
-        // Create a new game button
-        JButton restartButton = new JButton(new ImageIcon("src/main/resources/sprite/restart.png"));
-        restartButton.setBorderPainted(false);
-        restartButton.setContentAreaFilled(false);
-        restartButton.addActionListener(new ActionListener() {
-            @Override
+        //Start Button
+        ImageIcon startbBtn = new ImageIcon(getClass().getResource("/sprite/back_new.png"));
+        startButton = new JButton(startbBtn);
+        startButton.setBorderPainted(false);
+        startButton.setContentAreaFilled(false);
+        startButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Code for restart button
                 dispose();
-                new Launcher().launch();
+                new MainMenu();
             }
         });
-// Add the new game button to the buttons panel
-        buttonsPanel.add(restartButton);
+        add(startButton);
+        startButton.setBounds(250, 450, 200, 100);
 
-
-        // Add "Exit" button
-        JButton  exitButton = new JButton(new ImageIcon("src/main/resources/sprite/exit.png"));
+        // Create the Exit button
+        ImageIcon exitBtn = new ImageIcon(getClass().getResource("/sprite/exit_new.png"));
+        exitButton = new JButton(exitBtn);
         exitButton.setBorderPainted(false);
         exitButton.setContentAreaFilled(false);
         exitButton.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
-                // Code for exit button
-                dispose();
                 System.exit(0);
             }
         });
-        buttonsPanel.add(exitButton);
+        add(exitButton);
+        exitButton.setBounds(250, 550, 200, 100);
 
-        // Add message
-        /*JLabel messageLabel = new JLabel("YOU WIN.");
-        messageLabel.setFont(TITLE_FONT);
-        messageLabel.setForeground(Color.YELLOW);
-        messageLabel.setHorizontalAlignment(JLabel.CENTER);
-        getContentPane().add(messageLabel, BorderLayout.NORTH);*/
+        buttonPanel.setBackground(Color.BLACK);
 
-        // Center the frame on the screen
+        // Add the button panel to the center of the frame
+        add(buttonPanel, BorderLayout.CENTER);
+
+        // Set the size and center the frame on the screen
+        setSize(700, 700);
+
+        // set the frame
         setLocationRelativeTo(null);
+        setResizable(false);
+        setUndecorated(false);
 
-        // Make the frame visible
+
+        // Set the close operation and make the frame visible
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-    }
 
-    public static void main(String[] args) {
-        // Create a new instance of GameOver
-        new GameVictory();
+        buttonPanel.setLayout(new FlowLayout());
+
     }
 
 }
