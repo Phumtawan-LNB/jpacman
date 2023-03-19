@@ -51,7 +51,7 @@ public class Blinky extends Ghost {
     /**
      * The base movement interval.
      */
-    private static final int MOVE_INTERVAL = 250;
+    private static final int MOVE_INTERVAL = 500;
 
     /**
      * Creates a new "Blinky", a.k.a. "Shadow".

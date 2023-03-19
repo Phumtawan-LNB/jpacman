@@ -61,7 +61,7 @@ public class Pinky extends Ghost {
     /**
      * The base movement interval.
      */
-    private static final int MOVE_INTERVAL = 200;
+    private static final int MOVE_INTERVAL = 500;
 
     /**
      * Creates a new "Pinky", a.k.a. "Speedy".

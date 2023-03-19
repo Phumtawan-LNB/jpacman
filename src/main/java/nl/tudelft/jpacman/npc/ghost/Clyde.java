@@ -55,7 +55,7 @@ public class Clyde extends Ghost {
     /**
      * The base movement interval.
      */
-    private static final int MOVE_INTERVAL = 250;
+    private static final int MOVE_INTERVAL = 500;
 
     /**
      * A map of opposite directions.
