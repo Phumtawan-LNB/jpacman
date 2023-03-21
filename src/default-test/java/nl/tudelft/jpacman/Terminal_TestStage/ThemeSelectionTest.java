@@ -27,9 +27,6 @@ public class ThemeSelectionTest {
         launcher.dispose();
 
     }
-    /**
-     * Quit the user interface when we're done.
-     */
 
     @Test
     void setUpPacman2() throws InterruptedException {
