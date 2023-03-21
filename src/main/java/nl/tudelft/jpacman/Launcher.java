@@ -219,8 +219,8 @@ public class Launcher {
 
     public static void main(String[] args) throws IOException {
         //new ThemeUI();
-       new MainMenu();
+       //new MainMenu();
         //new GameVictory();
-        //new GameOver();
+        new GameOver();
     }
 }
