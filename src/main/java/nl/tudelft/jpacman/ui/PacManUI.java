@@ -73,8 +73,8 @@ public class PacManUI extends JFrame {
         assert keyMappings != null;
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        setUndecorated(true);
+        setResizable(true);
+        setUndecorated(false);
 
         PacKeyListener keys = new PacKeyListener(keyMappings);
         addKeyListener(keys);
