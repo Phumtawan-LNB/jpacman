@@ -10,9 +10,9 @@ import java.awt.event.ActionListener;
 
 public class MainMenu extends JFrame {
     private JLabel pacLogo, pacWalk;
-    private JButton startButton;
-    private JButton exitButton;
-    private JButton imageButton;
+    public JButton startButton;
+    public JButton exitButton;
+    public JButton imageButton, imageButton2;
 
     public MainMenu() {
         super("Pacman Main Menu");
@@ -40,11 +40,11 @@ public class MainMenu extends JFrame {
         pacLogo.setBounds(0, 0, 10, 10);*/
 
         ImageIcon imgBtn2 = new ImageIcon(getClass().getResource("/sprite/pacmanwalk.gif"));
-        imageButton = new JButton(imgBtn2);
-        imageButton.setBorderPainted(false);
-        imageButton.setContentAreaFilled(false);
-        add(imageButton);
-        imageButton.setBounds(100, 250, 492, 280);
+        imageButton2 = new JButton(imgBtn2);
+        imageButton2.setBorderPainted(false);
+        imageButton2.setContentAreaFilled(false);
+        add(imageButton2);
+        imageButton2.setBounds(100, 250, 492, 280);
 
         //Image Bg
         /*ImageIcon pacmanwalkIcon = new ImageIcon(getClass().getResource("/sprite/pacmanwalk.gif"));

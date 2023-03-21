@@ -10,12 +10,12 @@ import java.awt.event.ActionListener;
 
 public class ThemeUI extends JFrame {
     private JLabel pacLogo, pacWalk;
-    private JButton exitButton, christmasButton, olympicButton, halloweenButton, candyButton, spaceButton;
-    private JButton nameIconbutton,nameIconbutton2,nameIconbutton3,nameIconbutton4,nameIconbutton5;
+    public JButton  christmasButton, olympicButton, halloweenButton, candyButton, spaceButton;
+    public JButton nameIconbutton,nameIconbutton2,nameIconbutton3,nameIconbutton4,nameIconbutton5;
     private JTextField textField1;
-    private JButton startButton;
+    public JButton startButton;
 
-    private JButton imageButton;
+    public JButton imageButton;
 
     public ThemeUI() {
         super("Pacman Theme Menu");

@@ -30,6 +30,7 @@ repositories {
 
 dependencies {
     implementation 'org.testng:testng:7.1.0'
+    implementation 'com.andrewjamesjohnson:junit-parameterized-test-case:1.0.1'
     compile "com.google.guava:guava:$guavaVersion"
 
     compileOnly "com.github.spotbugs:spotbugs-annotations:$spotbugsAnnotationsVersion"
