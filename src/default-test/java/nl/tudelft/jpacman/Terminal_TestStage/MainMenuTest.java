@@ -1,6 +1,5 @@
 package nl.tudelft.jpacman.Terminal_TestStage;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 
@@ -8,11 +7,8 @@ import nl.tudelft.jpacman.main.ui.MainMenu;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.testng.annotations.Ignore;
 
 import javax.swing.*;
-import java.io.File;
-import java.net.URL;
 
 public class MainMenuTest {
     @Test

@@ -14,7 +14,6 @@ public class ThemeUI extends JFrame {
     public JButton nameIconbutton,nameIconbutton2,nameIconbutton3,nameIconbutton4,nameIconbutton5;
     private JTextField textField1;
     public JButton startButton;
-
     public JButton imageButton;
 
     public ThemeUI() {
