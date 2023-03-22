@@ -38,7 +38,7 @@ class ButtonPanel extends JPanel {
         }
         else if (config.getConfig()=="1"){
             setBackground(Color.decode("#4c4c4c"));
-            imagePath = "_ingame.png";
+            imagePath = "_ingame_hw.png";
         }
         else if (config.getConfig()=="2"){
             setBackground(Color.WHITE);
