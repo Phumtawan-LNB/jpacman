@@ -1,19 +1,17 @@
 package nl.tudelft.jpacman.main.ui;
 
 import javax.swing.*;
-import nl.tudelft.jpacman.Launcher;
+
 import nl.tudelft.jpacman.ui.ThemeConfig;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GameVictory extends JFrame {
-    private JLabel pacLogo, pacWalk;
-    private JButton startButton;
-    private JButton exitButton;
-    private JTextField textField1;
+    public  JLabel pacLogo, pacWalk;
+    public JButton backButton;
+    public  JButton exitButton;
 
     public GameVictory() {
         super("Game victory");
@@ -36,18 +34,18 @@ public class GameVictory extends JFrame {
         pacWalk.setBounds(0, 0, 10, 10);
 
         //Start Button
-        ImageIcon startbBtn = new ImageIcon(getClass().getResource("/sprite/back_new.png"));
-        startButton = new JButton(startbBtn);
-        startButton.setBorderPainted(false);
-        startButton.setContentAreaFilled(false);
-        startButton.addActionListener(new ActionListener() {
+        ImageIcon bkBtn = new ImageIcon(getClass().getResource("/sprite/back_new.png"));
+        backButton = new JButton(bkBtn);
+        backButton.setBorderPainted(false);
+        backButton.setContentAreaFilled(false);
+        backButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 new MainMenu();
             }
         });
-        add(startButton);
-        startButton.setBounds(250, 450, 200, 100);
+        add(backButton);
+        backButton.setBounds(250, 450, 200, 100);
 
         // Create the Exit button
         ImageIcon exitBtn = new ImageIcon(getClass().getResource("/sprite/exit_new.png"));
