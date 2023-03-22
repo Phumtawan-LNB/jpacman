@@ -1,6 +1,5 @@
 package nl.tudelft.jpacman.Terminal_TestStage;
 
-import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.testng.AssertJUnit.assertEquals;
 import org.junit.jupiter.api.Test;
@@ -21,7 +20,6 @@ public class GameOverTest {
 
 
         assertEquals(true, gameover.isVisible());
-
 
         assertNotNull(gameover.backButton);
         ImageIcon bkBtnIcon = (ImageIcon) gameover.backButton.getIcon();

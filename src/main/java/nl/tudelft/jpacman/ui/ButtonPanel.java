@@ -17,6 +17,8 @@ class ButtonPanel extends JPanel {
      */
     private static final long serialVersionUID = 1L;
 
+    public static String imagePath = "";
+
     /**
      * Create a new button panel with a button for every action.
      * @param buttons The map of caption - action for each button.
@@ -31,14 +33,28 @@ class ButtonPanel extends JPanel {
 
         ThemeConfig config = new ThemeConfig();
         if (config.getConfig()=="0"){
-            setBackground(Color.WHITE);
+            setBackground(new Color(95, 158, 160));
+            imagePath = "_ingame_op.png";
         }
-        else {
-            setBackground(Color.BLACK);
+        else if (config.getConfig()=="1"){
+            setBackground(Color.decode("#4c4c4c"));
+            imagePath = "_ingame.png";
+        }
+        else if (config.getConfig()=="2"){
+            setBackground(Color.WHITE);
+            imagePath = "_ingame_cm.png";
+        }
+        else if (config.getConfig()=="3"){
+            setBackground(Color.decode("#FFE4E1"));
+            imagePath = "_ingame_cd.png";
+        }
+        else if (config.getConfig()=="4"){
+            setBackground(Color.decode("#000033"));
+            imagePath = "_ingame_sp.png";
         }
 
         for (final String caption : buttons.keySet()) {
-            ImageIcon icon = new ImageIcon(getClass().getResource("/sprite/" + caption.toLowerCase() + "_ingame.png"));
+            ImageIcon icon = new ImageIcon(getClass().getResource("/sprite/theme_button/" + caption.toLowerCase() + imagePath));
             JButton button = new JButton(icon);
             button.addActionListener(e -> {
                 buttons.get(caption).doAction();

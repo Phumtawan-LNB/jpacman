@@ -55,11 +55,21 @@ public class ScorePanel extends JPanel {
 
         ThemeConfig config = new ThemeConfig();
         if (config.getConfig()=="0"){
+            setBackground(new Color(95, 158, 160));
+        }
+        else if (config.getConfig()=="1"){
+            setBackground(Color.decode("#4c4c4c"));
+        }
+        else if (config.getConfig()=="2"){
             setBackground(Color.WHITE);
         }
-        else {
-            setBackground(Color.BLACK);
+        else if (config.getConfig()=="3"){
+            setBackground(Color.decode("#FFE4E1"));
         }
+        else if (config.getConfig()=="4"){
+            setBackground(Color.decode("#000033"));
+        }
+
         /*for (int i = 1; i <= players.size(); i++) {
             add(new JLabel("Player " + i, JLabel.CENTER));
         }*/

@@ -23,7 +23,7 @@ public class ThemeSelectionTest {
         ThemeConfig config = new ThemeConfig();
         config.setConfig("0");
         launcher.launch();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         launcher.dispose();
 
     }
@@ -37,9 +37,8 @@ public class ThemeSelectionTest {
         ThemeConfig config = new ThemeConfig();
         config.setConfig("1");
         launcher.launch();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         launcher.dispose();
-
     }
     @Test
     void setUpPacman3() throws InterruptedException {
@@ -50,7 +49,30 @@ public class ThemeSelectionTest {
         ThemeConfig config = new ThemeConfig();
         config.setConfig("2");
         launcher.launch();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
+        launcher.dispose();
+    }
+    @Test
+    void setUpPacman4() throws InterruptedException {
+        themeUI = new ThemeUI();
+        Thread.sleep(2000);
+        themeUI.dispose();
+        launcher = new Launcher();
+        ThemeConfig config = new ThemeConfig();
+        config.setConfig("3");
+        launcher.launch();
+        Thread.sleep(3000);
+        launcher.dispose();
+    }
+    void setUpPacman5() throws InterruptedException {
+        themeUI = new ThemeUI();
+        Thread.sleep(2000);
+        themeUI.dispose();
+        launcher = new Launcher();
+        ThemeConfig config = new ThemeConfig();
+        config.setConfig("4");
+        launcher.launch();
+        Thread.sleep(3000);
         launcher.dispose();
     }
 }

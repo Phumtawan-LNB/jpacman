@@ -20,9 +20,7 @@ public class GameVictoryTest {
         assertEquals(700, gamevictory.getWidth());
         assertEquals(700, gamevictory.getHeight());
 
-
         assertEquals(true, gamevictory.isVisible());
-
 
         assertNotNull(gamevictory.backButton);
         ImageIcon bkBtnIcon = (ImageIcon) gamevictory.backButton.getIcon();
@@ -32,7 +30,6 @@ public class GameVictoryTest {
         assertNotNull(gamevictory.exitButton);
         ImageIcon exitBtnIcon = (ImageIcon) gamevictory.exitButton.getIcon();
         assertEquals("file:/C:/Users/kunat/OneDrive%20-%20Khon%20Kaen%20University/Desktop/Jp/Project_pacman/build/resources/main/sprite/exit_new.png", exitBtnIcon.getDescription());
-
 
         assertNotNull(gamevictory.pacWalk);
         ImageIcon imgBtnIcon = (ImageIcon) gamevictory.pacWalk.getIcon();
