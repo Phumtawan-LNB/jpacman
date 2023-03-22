@@ -67,19 +67,19 @@ public class ThemeUI extends JFrame {
         add(nameIconbutton3);
         nameIconbutton3.setBounds(455, 210, 146, 47);
 
-        ImageIcon nameIcon4 = new ImageIcon(getClass().getResource("/sprite/dead.png"));
+        ImageIcon nameIcon4 = new ImageIcon(getClass().getResource("/sprite/candy_name.png"));
         nameIconbutton4 = new JButton(nameIcon4);
         nameIconbutton4.setBorderPainted(false);
         nameIconbutton4.setContentAreaFilled(false);
         add(nameIconbutton4);
-        nameIconbutton4.setBounds(80, 420, 176, 16);
+        nameIconbutton4.setBounds(70, 425, 176, 16);
 
-        ImageIcon nameIcon5 = new ImageIcon(getClass().getResource("/sprite/dead.png"));
+        ImageIcon nameIcon5 = new ImageIcon(getClass().getResource("/sprite/space_name.png"));
         nameIconbutton5 = new JButton(nameIcon5);
         nameIconbutton5.setBorderPainted(false);
         nameIconbutton5.setContentAreaFilled(false);
         add(nameIconbutton5);
-        nameIconbutton5.setBounds(260, 420, 176, 16);
+        nameIconbutton5.setBounds(250, 425, 176, 16);
 
 
         //Create the Halloween button
@@ -128,14 +128,14 @@ public class ThemeUI extends JFrame {
         christmasButton.setBounds(445, 250, 160, 147);
 
         // Create the Candy button
-        ImageIcon candyIcon = new ImageIcon(getClass().getResource("/sprite/halloween.png"));
+        ImageIcon candyIcon = new ImageIcon(getClass().getResource("/sprite/candy.png"));
         candyButton = new JButton(candyIcon);
         candyButton.setBorderPainted(false);
         candyButton.setContentAreaFilled(true);
         candyButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                config.setConfig("2");
+                config.setConfig("3");
                 new Launcher().launch();
             }
         });
@@ -143,14 +143,14 @@ public class ThemeUI extends JFrame {
         candyButton.setBounds(80, 450, 160, 147);
 
         // Create the Halloween button
-        ImageIcon spaceIcon = new ImageIcon(getClass().getResource("/sprite/halloween.png"));
+        ImageIcon spaceIcon = new ImageIcon(getClass().getResource("/sprite/space.png"));
         spaceButton = new JButton(spaceIcon);
         spaceButton.setBorderPainted(false);
         spaceButton.setContentAreaFilled(true);
         spaceButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                config.setConfig("1");
+                config.setConfig("4");
                 new Launcher().launch();
             }
         });

@@ -61,8 +61,12 @@ public class PacManSprites extends SpriteStore {
             return directionSprite("/sprite/pacman_olympic.png", PACMAN_ANIMATION_FRAMES);
         }else if (config.getConfig()=="1"){
             return directionSprite("/sprite/pacman_halloween.png", PACMAN_ANIMATION_FRAMES);
-        }else{
+        }else if (config.getConfig()=="2"){
             return directionSprite("/sprite/pacman_crismas.png", PACMAN_ANIMATION_FRAMES);
+        }else if (config.getConfig()=="3"){
+            return directionSprite("/sprite/pacman_candy.png", PACMAN_ANIMATION_FRAMES);
+        }else {
+            return directionSprite("/sprite/pacman_space.png", PACMAN_ANIMATION_FRAMES);
         }
     }
 
@@ -115,9 +119,32 @@ public class PacManSprites extends SpriteStore {
     public Map<Direction, Sprite> getGhostSprite(GhostColor color) {
         assert color != null;
 
-        String resource = "/sprite/ghost_" + color.name().toLowerCase()
-            + ".png";
-        return directionSprite(resource, GHOST_ANIMATION_FRAMES);
+        if (config.getConfig() == "0"){
+            String resource = "/sprite/theme_olympic/ghost_" + color.name().toLowerCase()
+                + ".png";
+            return directionSprite(resource, GHOST_ANIMATION_FRAMES);
+        }
+        else if (config.getConfig() == "1"){
+            String resource = "/sprite/theme_halloween/ghost_" + color.name().toLowerCase()
+                + ".png";
+            return directionSprite(resource, GHOST_ANIMATION_FRAMES);
+        }
+
+        else if (config.getConfig() == "2"){
+            String resource = "/sprite/theme_christmas/ghost_" + color.name().toLowerCase()
+                + ".png";
+            return directionSprite(resource, GHOST_ANIMATION_FRAMES);
+        }
+        else if (config.getConfig() == "3"){
+            String resource = "/sprite/theme_candy/ghost_" + color.name().toLowerCase()
+                + ".png";
+            return directionSprite(resource, GHOST_ANIMATION_FRAMES);
+        }
+        else {
+            String resource = "/sprite/theme_space/ghost_" + color.name().toLowerCase()
+                + ".png";
+            return directionSprite(resource, GHOST_ANIMATION_FRAMES);
+        }
     }
 
     /**
@@ -126,11 +153,15 @@ public class PacManSprites extends SpriteStore {
     ThemeConfig config = new ThemeConfig();
     public Sprite getWallSprite() {
         if (config.getConfig()=="0"){
-            return loadSprite("/sprite/wall.png");
+            return loadSprite("/sprite/wall_olympic.png");
         } else if (config.getConfig()=="1"){
             return loadSprite("/sprite/wall_halloween.png");
-        }else {
+        }else if (config.getConfig()=="2"){
             return loadSprite("/sprite/wall_christmas.png");
+        }else if (config.getConfig()=="3"){
+            return loadSprite("/sprite/wall_candy.png");
+        }else {
+            return loadSprite("/sprite/wall_space.png");
         }
     }
 
@@ -142,8 +173,12 @@ public class PacManSprites extends SpriteStore {
             return loadSprite("/sprite/floor_olympic.png");
         }else if(config.getConfig()=="1"){
             return loadSprite("/sprite/floor.png");
-        }else{
+        }else if(config.getConfig()=="2"){
             return loadSprite("/sprite/floor.png");
+        }else if(config.getConfig()=="3"){
+            return loadSprite("/sprite/floor_candy.png");
+        }else {
+            return loadSprite("/sprite/floor_space.png");
         }
     }
 
@@ -155,8 +190,12 @@ public class PacManSprites extends SpriteStore {
             return loadSprite("/sprite/point_olympic.png");
         }else if (config.getConfig()=="1"){
             return loadSprite("/sprite/point_halloween.png");
-        }else{
+        }else if (config.getConfig()=="2"){
             return loadSprite("/sprite/point_cristmas.png");
+        }else if (config.getConfig()=="3"){
+            return loadSprite("/sprite/pellet_candy.png");
+        }else {
+            return loadSprite("/sprite/point_space.png");
         }
     }
 
