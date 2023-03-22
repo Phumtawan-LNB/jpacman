@@ -47,7 +47,7 @@ public class ThemeUITest {
         ImageIcon nameIcon4 = (ImageIcon) themeUI.nameIconbutton4.getIcon();
         assertEquals("file:/D:/OneDrive%20-%20Khon%20Kaen%20University/Class%20material/Software%20Engineer/jpacman/build/resources/main/sprite/candy_name.png", nameIcon4.getDescription());
         ImageIcon nameIcon5 = (ImageIcon) themeUI.nameIconbutton5.getIcon();
-        assertEquals("file:/D:/OneDrive%20-%20Khon%20Kaen%20University/Class%20material/Software%20Engineer/jpacman/build/resources/main/sprite/space_name", nameIcon5.getDescription());
+        assertEquals("file:/D:/OneDrive%20-%20Khon%20Kaen%20University/Class%20material/Software%20Engineer/jpacman/build/resources/main/sprite/space_name.png", nameIcon5.getDescription());
         ImageIcon olympicIcon = (ImageIcon) themeUI.olympicButton.getIcon();
         assertEquals("file:/D:/OneDrive%20-%20Khon%20Kaen%20University/Class%20material/Software%20Engineer/jpacman/build/resources/main/sprite/olympic.png", olympicIcon.getDescription());
         ImageIcon halloweenIcon = (ImageIcon) themeUI.halloweenButton.getIcon();
