@@ -11,46 +11,87 @@ import org.junit.jupiter.api.Test;
 import javax.swing.*;
 
 public class MainMenuTest {
-    @Test
-    public void testMainMenu(){
-        MainMenu mainMenu = new MainMenu();
+    public MainMenu mainMenu;
+    @BeforeEach
+    public void setUpMainMenu() {
+        mainMenu = new MainMenu();
 
+    }
+    @AfterEach
+    public void setDownMainMenu() throws InterruptedException {
+        Thread.sleep(1000);
+        mainMenu.dispose();
+    }
+
+    @Test
+    public void pacmanTitle(){
         // Check the title of the frame
         assertEquals("Pacman Main Menu", mainMenu.getTitle());
-
+    }
+    @Test
+    public void mainMenuSizeTest(){
         // Check the size of the frame
         assertEquals(700, mainMenu.getWidth());
         assertEquals(800, mainMenu.getHeight());
-
-        // Check the visibility of the frame
         assertEquals(true, mainMenu.isVisible());
+    }
+    @Test
+    public void startButtonTest() throws InterruptedException {
+        int x = mainMenu.startButton.getX();
+        int y = mainMenu.startButton.getY();
+        int w = mainMenu.startButton.getWidth();
+        int h = mainMenu.startButton.getHeight();
 
-        // Check that the start button is not null
+        assertEquals(250,x);
+        assertEquals(525,y);
+        assertEquals(200,w);
+        assertEquals(100,h);
+
         assertNotNull(mainMenu.startButton);
+        Thread.sleep(1000);
+        mainMenu.startButton.doClick();
+        Thread.sleep(1000);
+    }
 
-        // Check the start button's icon
-        ImageIcon startBtnIcon = (ImageIcon) mainMenu.startButton.getIcon();
-        assertEquals("file:/D:/OneDrive%20-%20Khon%20Kaen%20University/Class%20material/Software%20Engineer/jpacman/build/resources/main/sprite/start_new.png", startBtnIcon.getDescription());
+    @Test
+    public void pacmanWalkPic(){
+        int x = mainMenu.imageButton2.getX();
+        int y = mainMenu.imageButton2.getY();
+        assertEquals(100,x);
+        assertEquals(250,y);
 
-        // Check that the exit button is not null
+        int w = mainMenu.imageButton2.getWidth();
+        int h = mainMenu.imageButton2.getHeight();
+        assertEquals(492,w);
+        assertEquals(280,h);
+    }
+    @Test
+    public void pacmanLogoTest(){
+        int x = mainMenu.imageButton.getX();
+        int y = mainMenu.imageButton.getY();
+        assertEquals(50,x);
+        assertEquals(50,y);
+
+        int w = mainMenu.imageButton.getWidth();
+        int h = mainMenu.imageButton.getHeight();
+        assertEquals(600,w);
+        assertEquals(229,h);
+    }
+    @Test
+    public void exitButtonTest() throws InterruptedException {
+        int x = mainMenu.exitButton.getX();
+        int y = mainMenu.exitButton.getY();
+        int w = mainMenu.exitButton.getWidth();
+        int h = mainMenu.exitButton.getHeight();
+
+        assertEquals(250,x);
+        assertEquals(600,y);
+        assertEquals(200,w);
+        assertEquals(100,h);
+
         assertNotNull(mainMenu.exitButton);
-
-        // Check the exit button's icon
-        ImageIcon exitBtnIcon = (ImageIcon) mainMenu.exitButton.getIcon();
-        assertEquals("file:/D:/OneDrive%20-%20Khon%20Kaen%20University/Class%20material/Software%20Engineer/jpacman/build/resources/main/sprite/exit_new.png", exitBtnIcon.getDescription());
-
-        // Check that the image button is not null
-        assertNotNull(mainMenu.imageButton);
-
-        // Check the image Pacmanwalk.gif
-        ImageIcon imgBtnIcon = (ImageIcon) mainMenu.imageButton.getIcon();
-        assertEquals("file:/D:/OneDrive%20-%20Khon%20Kaen%20University/Class%20material/Software%20Engineer/jpacman/build/resources/main/sprite/logo_pacman3.png", imgBtnIcon.getDescription());
-
-        // Check that the image button is not null
-        assertNotNull(mainMenu.imageButton2);
-
-        // Check the image Pacmanwalk.gif
-        ImageIcon imgBtnIcon2 = (ImageIcon) mainMenu.imageButton2.getIcon();
-        assertEquals("file:/D:/OneDrive%20-%20Khon%20Kaen%20University/Class%20material/Software%20Engineer/jpacman/build/resources/main/sprite/pacmanwalk.gif", imgBtnIcon2.getDescription());
+        Thread.sleep(1000);
+        //mainMenu.exitButton.doClick(); // must be success 100%
+        Thread.sleep(1000);
     }
 }

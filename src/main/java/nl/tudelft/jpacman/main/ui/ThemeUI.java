@@ -13,7 +13,7 @@ public class ThemeUI extends JFrame {
     public JButton  christmasButton, olympicButton, halloweenButton, candyButton, spaceButton;
     public JButton nameIconbutton,nameIconbutton2,nameIconbutton3,nameIconbutton4,nameIconbutton5;
     private JTextField textField1;
-    public JButton startButton;
+    public JButton backButton;
     public JButton imageButton;
 
     public ThemeUI() {
@@ -157,18 +157,18 @@ public class ThemeUI extends JFrame {
         add(spaceButton);
         spaceButton.setBounds(260, 450, 160, 147);
 
-        ImageIcon startbBtn = new ImageIcon(getClass().getResource("/sprite/back_new.png"));
-        startButton = new JButton(startbBtn);
-        startButton.setBorderPainted(false);
-        startButton.setContentAreaFilled(false);
-        startButton.addActionListener(new ActionListener() {
+        ImageIcon backBtn = new ImageIcon(getClass().getResource("/sprite/back_new.png"));
+        backButton = new JButton(backBtn);
+        backButton.setBorderPainted(false);
+        backButton.setContentAreaFilled(false);
+        backButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 new MainMenu();
             }
         });
-        add(startButton);
-        startButton.setBounds(250, 650, 200, 100);
+        add(backButton);
+        backButton.setBounds(250, 650, 200, 100);
         // Set the panel background to black
         buttonPanel.setBackground(Color.BLACK);
 

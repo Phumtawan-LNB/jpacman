@@ -94,7 +94,7 @@ public class PacManUI extends JFrame {
         contentPanel.add(scorePanel, BorderLayout.NORTH);
         contentPanel.add(boardPanel, BorderLayout.CENTER);
 
-        setBounds(600, 100, 600, 700);
+        setBounds(400, 0, 600, 700);
 
         pack();
     }
