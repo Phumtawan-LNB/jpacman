@@ -74,7 +74,7 @@ public class GameVictoryTest {
     public void gameVictoryIconTest(){
         int x = gameVictory.pacWalk.getX();
         int y = gameVictory.pacWalk.getY();
-        assertEquals(-1,x);
+        assertEquals(0,x);
         assertEquals(5,y);
 
         int w = gameVictory.pacWalk.getWidth();

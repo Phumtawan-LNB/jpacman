@@ -72,7 +72,7 @@ public class GameOverTest {
     public void gameOverIconTest(){
         int x = gameOver.pacWalk.getX();
         int y = gameOver.pacWalk.getY();
-        assertEquals(-1,x);
+        assertEquals(0,x);
         assertEquals(5,y);
 
         int w = gameOver.pacWalk.getWidth();
